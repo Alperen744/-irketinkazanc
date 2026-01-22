@@ -1,0 +1,86 @@
+/* Scanner input=new Scanner(System.in);
+      System.out.println("pozitif bir tam sayı giriniz: ");
+      int N=input.nextInt();
+      Random rnd=new Random();
+      int dizi[][]=new int[N][N];
+      for(int i=0;i<N;i++){
+          for(int j=0;j<N;j++){
+              dizi[i][j]=rnd.nextInt(10);
+          }
+      }
+     
+      for(int i=0;i<N;i++){
+          for(int j=0;j<N;j++){
+              boolean asal=true;
+              if(dizi[i][j]<=1){
+                  asal=false;
+              }
+              for(int k=2;k<dizi[i][j];k++){
+                  if(dizi[i][j]%k==0){
+                      asal=false;
+                  }
+              }
+              if(asal==false){
+                  dizi[i][j]=0;
+              }
+              System.out.print(dizi[i][j]);
+          }
+          System.out.println();
+      }
+     
+       Scanner input=new Scanner(System.in);
+        System.out.println("N adet şirket sayısı giriniz: ");
+        int N=input.nextInt();
+        int kar_giris[][]=new int[N][12];
+        for(int i=0;i<N;i++){
+            for(int j=0;j<12;j++){
+                System.out.println((i+1)+". şirketin"+(j+1)+". ayının kar bilgisini giriniz: ");
+                kar_giris[i][j]=input.nextInt();
+            }
+        }
+       int max_kar[]=new int[N];
+       int sayac=0;
+       for(int i=0;i<N;i++){
+           max_kar[i]=kar_giris[0][0];
+         for(int j=0;j<12;j++){
+             if(max_kar[i]<kar_giris[i][j]){
+                 max_kar[i]=kar_giris[i][j];
+                 sayac=j;
+             }
+         }
+           System.out.println((i+1)+".şirketin"+(sayac+1)+". ayındaki 12 aylık max karı:"+max_kar[i]);
+       }
+      
+     Scanner input=new Scanner(System.in);
+        System.out.println("Bir kelime giriniz: ");
+        String kelime=input.nextLine();
+        String ters_kelime[]=new String[kelime.length()];
+        for(int i=0;i<kelime.length();i++){
+            ters_kelime[kelime.length()-1-i]=String.valueOf(kelime.charAt(i));
+        }
+        System.out.println("tersten kelimesi:");
+        for(int i=0;i<kelime.length();i++){
+            System.out.print(ters_kelime[i]);
+        }
+        
+     
+    Scanner input=new Scanner(System.in);
+        System.out.println("kaç öğrenci olduğunu yaziniz: ");
+        int N=input.nextInt();
+        int dizi[][]=new int[N][6];
+        for(int i=0;i<N;i++){
+            for(int j=0;j<6;j++){
+                System.out.println((i+1)+". öğrencinin "+(j+1)+".dersinin notunu giriniz:");
+                dizi[i][j]=input.nextInt();
+            }
+        }
+     int max_not[]=new int[N];
+        for(int i=0;i<N;i++){
+            max_not[i]=dizi[0][0];
+            for(int j=0;j<6;j++){
+                if(max_not[i]<dizi[i][j]){
+                    max_not[i]=dizi[i][j];
+                }
+            }
+            System.out.println((i+1)+". öğrencinin max notu: "+max_not[i]);
+        }
