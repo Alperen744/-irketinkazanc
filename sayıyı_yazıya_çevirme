@@ -1,0 +1,8 @@
+ Scanner input=new Scanner(System.in);
+        System.out.println("iki basamaklı bir doğal sayı giriniz: ");
+        int N=input.nextInt();
+        int bas=N%10;
+        int sayac=N/10;
+        String onlar_bas[]={"on","yirmi","otuz","kırk","elli","altmış","yetmiş","seksen","doksan"};
+        String birler_bas[]={"sıfır","bir","iki","uc","dort","bes","altı","yedi","sekiz","dokuz"};
+        System.out.println(onlar_bas[sayac-1]+" "+birler_bas[bas]);
