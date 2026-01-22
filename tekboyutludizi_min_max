@@ -1,0 +1,26 @@
+Scanner input=new Scanner(System.in);
+        System.out.println("Dizinin kac elemanli olmasini istediginizi giriniz:");
+        int N=input.nextInt();
+        int en_kucuk;
+        int en_buyuk;
+        int dizi[]=new int[N];
+        for(int i=0;i<N;i++){
+            System.out.println((i+1)+". elemanını giriniz:");
+            dizi[i]=input.nextInt();
+        }
+        en_kucuk=dizi[0];
+        en_buyuk=dizi[0];
+        int sayac_en_kucuk=0;
+        int sayac_en_buyuk=0;
+        for(int i=0;i<N;i++){
+          if(en_kucuk>dizi[i]){
+              sayac_en_kucuk=i+1;
+              en_kucuk=dizi[i];
+          }
+          else if(en_buyuk<dizi[i]){
+              sayac_en_buyuk=i+1;
+              en_buyuk=dizi[i];
+          }
+        }
+        System.out.println("Dizinin en kucuk elemanı: "+en_kucuk+"sıra: "+sayac_en_kucuk);
+        System.out.println("Dizinin en buyuk elemanı: "+en_buyuk+"sıra: "+sayac_en_buyuk);
