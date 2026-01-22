@@ -1,0 +1,17 @@
+Scanner input=new Scanner(System.in);
+        System.out.println("0-49 arası sayı giriniz: ");
+        int N=input.nextInt();
+        Random rnd=new Random();
+        int sayi=rnd.nextInt(50);
+        while(N<sayi){
+            System.out.println("girdiğiniz sayiyi büyütünüz.");
+            N=input.nextInt();
+        }
+        while(N>sayi){
+            System.out.println("girdiğiniz sayiyi küçültün.");
+            N=input.nextInt();
+        }
+        if(N==sayi){
+            System.out.println("sayiyi doğru buldunuz tebrikler.");
+        }
+         System.out.println();
