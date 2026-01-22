@@ -1,0 +1,32 @@
+ //klavyeden girilen N ader notktanın (x-a)kare+(y-b)kare=rkare  dairesindeki dağılımını (üstünde mi altında mı içinde mi yanında mı olduğunu bulma)
+        //x değeri x dizisine y değeri y dizisine yerleştirilir 
+        //bulunan değer r2 den küçükse dairenin içinde büyükse dairenin dışında eşitse dairenin üzerinde sonucuna ulaşılacak.
+        Scanner input=new Scanner(System.in);
+        System.out.println("Dairenin merkezinin kordinatlarını giriniz(x,y): ");
+        int a=input.nextInt();
+        int b=input.nextInt();
+        System.out.println("Kordinat sisteminde kaç adet nokta olmasını istediğiinizi giriniz: ");
+        int nokta=input.nextInt();
+        int x_kordinat[]=new int[nokta];
+        int y_kordinat[]=new int[nokta];
+        System.out.println("Dairenin yaricapnı giriniz: ");
+        int daire_yaricap=input.nextInt();
+        double girilen_yaricap;
+        for(int i=0;i<nokta;i++){
+            System.out.println((1+i)+". x kordinatını giriniz: ");
+            x_kordinat[i]=input.nextInt();
+            System.out.println((i+1)+". y kordinatını giriniz: ");
+            y_kordinat[i]=input.nextInt();
+            
+            double denklem=Math.pow((x_kordinat[i]-a),2)+Math.pow((y_kordinat[i]-b),2);
+            girilen_yaricap=Math.pow(denklem,2);
+            if(girilen_yaricap<Math.pow(daire_yaricap,2)){
+                System.out.println((1+i)+". Noktanız dairenin içindedir.");
+            }
+            else if(girilen_yaricap==Math.pow(daire_yaricap,2)){
+                System.out.println((i+1)+". Noktanız dairenin üzerindedir.");
+            }
+            else if(girilen_yaricap>Math.pow(daire_yaricap,2)){
+                System.out.println((i+1)+". Noktanız dairenin dışındadır.");
+            }
+      
